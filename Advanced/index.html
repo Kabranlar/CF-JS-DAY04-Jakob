@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Advanced</title>
+    <style>
+    #container{
+    	position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    #circle {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: cyan;
+    }
+    #message{
+    	visibility: hidden;
+    }
+    </style>
+</head>
+
+<body>
+	<div id="container">
+		<div id="circle"></div>
+	    <p id="message">bla</p>
+	</div>
+
+    <script>
+
+    	function circleMouseOver() {
+    		document.getElementById("message").style.visibility = "visible";
+    		document.getElementById("message").innerHTML = "You are in the circle.";
+    	}
+
+    	function circleMouseOut() {
+    		document.getElementById("message").style.visibility = "visible";
+    		document.getElementById("message").innerHTML = "You are outside of the circle.";
+    	}
+
+    	function circleClick() {
+    		document.body.style.backgroundColor = "grey";
+    		document.getElementById("message").style.color = "white";
+    	}
+
+    	function circleDoubleClick() {
+    		document.body.style.backgroundColor = "blue";
+    		document.getElementById("message").style.color = "white";
+    	}
+
+    	document.getElementById("circle").addEventListener("mouseover", circleMouseOver, false);
+    	document.getElementById("circle").addEventListener("mouseout", circleMouseOut, false);
+    	document.getElementById("circle").addEventListener("click", circleClick, false);
+    	document.getElementById("circle").addEventListener("dblclick", circleDoubleClick, false);
+    </script>
+</body>
+
+</html>

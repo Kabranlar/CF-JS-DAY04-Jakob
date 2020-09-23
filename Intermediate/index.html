@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Intermediate</title>
+</head>
+<body>
+	
+	<span id="reserve">
+		
+	</span>
+
+	<script>
+
+		class Hotel {
+			hotelName;
+			numberOfNights;
+			address;
+			image;
+
+			constructor(a, b, c){
+				this.hotelName = a;
+				this.address = b;
+				this.image = c;
+				this.numberOfNights = Math.floor(Math.random() * 11);
+			}
+
+			showAvailability(desiredNumOfNights){
+				if (this.numberOfNights > desiredNumOfNights) {
+					document.getElementById("reserve").innerHTML = "<button>I'll reserve</button>";
+				}else{
+					document.getElementById("reserve").innerHTML = "Sorry, no available nights for " + this.hotelName + ".";
+				}
+			}
+		}
+
+		var balambHotel = new Hotel("Balamb Hotel", "Seaside Ave 2, Balamb", "https://static.wikia.nocookie.net/finalfantasy2/images/8/8f/Balamb_Flagge.jpg/revision/latest?cb=20130305103900&path-prefix=de");
+
+		balambHotel.showAvailability(5);
+
+	</script>
+</body>
+</html>

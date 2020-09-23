@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Basic1</title>
+	<meta charset="utf-8">
+	<title>Basic2</title>
 </head>
 <body>
 	<form>
@@ -9,6 +10,15 @@
 		<label>Last Name:<br><input id="lName" type="text" name="LastName" placeholder="Kenobi"></label><br>
 		<label>Age:<br><input id="age" type="text" name="Age" placeholder="70"></label><br>
 	</form>
+
+	<br>
+
+	<select id="profession">
+		<option value="it">IT</option>
+		<option value="hosp">Hospitality</option>
+	</select>
+
+	<br>
 
 	<input id="submit" type="submit" name="submit">
 
@@ -29,6 +39,12 @@
 			document.getElementById("test").innerHTML += lastName + "<br>";
 			var age = document.getElementById("age").value;
 			document.getElementById("test").innerHTML += age + "<br>";
+			var profession = document.getElementById("profession").value;
+			if (profession == "it") {
+				document.getElementById("test").style.backgroundColor = "purple";
+			}else{
+				document.getElementById("test").style.backgroundColor = "yellow";
+			}
 		}
 
 		document.getElementById("submit").addEventListener("click", extract, false);

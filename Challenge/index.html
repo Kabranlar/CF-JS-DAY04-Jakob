@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="">
+    <style>
+        #main{
+			border: 1px solid red;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		#left{
+			border: 1px solid green;
+			width: 45%;
+			text-align: center;
+		}
+
+		#right{
+			border: 1px solid blue;
+			width: 45%;
+			justify-content: space-around;
+		}
+
+		form{
+			position: relative;
+			text-align: right;
+			right: 25%;
+		}
+
+		#containerQuestions{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		.buttonAnswer{
+			width: 45%;
+			margin: 2%;
+		}
+
+	</style>
+</head>
+
+<body>
+    <div id="main" class="box">
+
+        <div id="left" class="box">
+
+            <form>
+                <label>Question: <input id="question" type="text" name="question"></label><br>
+                <label>Answer1: <input id="answer1" type="text" name="answer1"></label><br>
+                <label>Answer2: <input id="answer2" type="text" name="answer2"></label><br>
+                <label>Answer3: <input id="answer3" type="text" name="answer3"></label><br>
+                <label>AnswerCorrect: <input id="correctAnswer" type="text" name="correctAnswer"></label>
+            </form>
+
+            <br>
+
+            <input id="buttonGenerate" type="button" name="generateQuestion" value="Generate">
+
+        </div>
+
+        <div id="right" class="box">
+
+            <h2 id="printQuestion"></h2>
+
+            <div id="containerQuestions">
+                <input id="printAnswer1" class="buttonAnswer" type="button" value="">
+                <input id="printAnswer2" class="buttonAnswer" type="button" value="">
+                <input id="printAnswer3" class="buttonAnswer" type="button" value="">
+                <input id="printCorrectAnswer" class="buttonAnswer" type="button" value="">
+            </div>
+
+        </div>
+    </div>
+    <script>
+    class Quiz {
+        question;
+        answer1;
+        answer2;
+        answer3;
+        correctAnswer;
+
+        constructor() {
+
+        }
+    }
+
+    function generateQuiz() {
+        quiz.question = document.getElementById("question").value;
+        quiz.answer1 = document.getElementById("answer1").value;
+        quiz.answer2 = document.getElementById("answer2").value;
+        quiz.answer3 = document.getElementById("answer3").value;
+        quiz.correctAnswer = document.getElementById("correctAnswer").value;
+
+        document.getElementById("printQuestion").innerHTML = quiz.question;
+        document.getElementById("printAnswer1").value = quiz.answer1;
+        document.getElementById("printAnswer2").value = quiz.answer2;
+        document.getElementById("printAnswer3").value = quiz.answer3;
+        document.getElementById("printCorrectAnswer").value = quiz.correctAnswer;
+    }
+
+    var quiz = new Quiz();
+
+    document.getElementById("buttonGenerate").addEventListener("click", generateQuiz, false);
+    </script>
+</body>
+
+</html>
